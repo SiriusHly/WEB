@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/src/Html5.iml" filepath="$PROJECT_DIR$/src/Html5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JS/JS.iml" filepath="$PROJECT_DIR$/JS/JS.iml" />
       <module fileurl="file://$PROJECT_DIR$/WEB.iml" filepath="$PROJECT_DIR$/WEB.iml" />
     </modules>
   </component>
