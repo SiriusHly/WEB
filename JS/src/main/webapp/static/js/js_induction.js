@@ -11,3 +11,17 @@ function openWindow() {
         con.close();
     }
 }
+function cancelAllTag() {
+    document.getElementById('input1').removeAttribute('style');
+    var l= document.getElementsByTagName("input");
+    for(var i =0;i<l.length;i++){
+        var j = l[i];
+        j.removeAttribute('style');
+    }
+}
+
+function openn(){
+    alert("欢迎来到慕课网");
+    //没有px
+    window.open('https://www.imooc.com','_blank','width=600' ,'height=400');
+}
