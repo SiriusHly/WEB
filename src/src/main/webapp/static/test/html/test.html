@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .test1 li{
-            list-style-type: none;
-            float: left;
-            color: #2d3236;
-            margin-right: 10px;
-            color: #2d3236;
-        }
-        .test1 li a{
-            text-decoration: none;
-
-        }
-
-        .test1 ul a:first-child{
-            color: #fe6c0b;
-            margin-right: 0;
-        }
-    </style>
+    <title>浏览器对象</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
-<div class="test1">
-    <ul>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-    </ul>
-</div>
+<!--先编写好网页布局-->
+<p id="p1">操作成功</p>
+<p><label id="lbl">5</label><span>秒后返回主页</span><a href="#">返回</a></p>
+
+<script type="text/javascript">
+
+    var lbl = document.getElementById('lbl');
+    var s = 5;
+    var t = 2;
+    var mill = setInterval(newWeb, 1000);
+    function newWeb() {
+        s--;
+        lbl.innerHTML = s;
+        if (s == 1) {
+            window.open("https://www.imooc.com/qadetail/260112", "_blank");
+            clearInterval(mill);
+        }
+    }
+
+    //获取显示秒数的元素，通过定时器来更改秒数。
+    //通过window的location和history对象来控制网页的跳转。
+</script>
 </body>
 </html>

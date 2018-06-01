@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AngularJS" />
         <module name="Html5" />
         <module name="JS" />
+        <module name="RegularExpression" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="AngularJS" target="1.7" />
       <module name="Html5" target="1.7" />
       <module name="JS" target="1.7" />
+      <module name="RegularExpression" target="1.7" />
       <module name="WEB" target="1.7" />
     </bytecodeTargetLevel>
   </component>
