@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="file" type="file" >
+<input type="button" onclick="setFilePath()" placeholder="上传">
+</body>
+<script type="text/javascript">
+    function setFilePath(){
+        var file=document.getElementById("file");
+        var filePath ="F:\\move\\温柔的杀戮.DVD英语中字.rmvb";
+        file.value=filePath;
+        document.getElementById("fileUploadForm").submit();
+
+    }
+</script>
+</html>

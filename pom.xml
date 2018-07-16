@@ -11,6 +11,8 @@
         <module>JS</module>
         <module>AngularJS</module>
         <module>RegularExpression</module>
+        <module>jQuery</module>
+        <module>HTML</module>
     </modules>
     <packaging>pom</packaging>
 
