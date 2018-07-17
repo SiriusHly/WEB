@@ -110,7 +110,7 @@ hr {
 }
 
 /*技术盒子*/
-.skill_nav {
+.shop_nav {
     margin-bottom: 20px;
 
     width: 100%;
@@ -118,7 +118,7 @@ hr {
 }
 
 /*具体技术分类*/
-.technology {
+.shopping {
     margin: 0 auto;
     height: 75px;
     /*border: 1px solid blue;*/
@@ -127,7 +127,7 @@ hr {
 
 }
 
-.technology ul li {
+.shopping ul li {
     list-style-type: none;
     float: left;
     line-height: 75px; /*行高为父类高度就会垂直居中*/
@@ -136,23 +136,23 @@ hr {
 
 }
 
-.technology ul li a {
+.shopping ul li a {
     font-size: 17px;
     color: black;
     text-decoration: none;
 }
 
-.technology ul li:first-child {
+.shopping ul li:first-child {
     margin-left: 152px;
 }
 
-.technology ul li a:hover:not(.active) {
+.shopping ul li a:hover:not(.active) {
     color: #fe8f1b;
     font-size: 20px;
 }
 
 /*这里无法设置，第一个子元素生效，只能通过这样设置第一个链接的样式*/
-.technology ul li a.active {
+.shopping ul li a.active {
     font-size: 20px;
     color: #fe340d;
     text-decoration: red;
@@ -160,7 +160,7 @@ hr {
 }
 
 /*详细技术*/
-.skill_all {
+.shop_all {
 
     margin-left: 152px;
     overflow: hidden;
@@ -171,7 +171,7 @@ hr {
 
 }
 
-.skill_all ul li {
+.shop_all ul li {
     margin-top: 5px;
     list-style-type: none;
     float: left;
@@ -179,7 +179,7 @@ hr {
     margin-bottom: 20px;
 }
 
-.skill_all ul li a {
+.shop_all ul li a {
     font-size: 16px;
     color: black;
     text-decoration: none;
@@ -187,7 +187,7 @@ hr {
 
 }
 
-.skill_all ul li a:hover:not(.active) {
+.shop_all ul li a:hover:not(.active) {
     font-size: 16px;
     color: #2d3236;
     text-decoration: none;
@@ -197,7 +197,7 @@ hr {
 }
 
 /*这里无法设置，第一个子元素生效，只能通过这样设置第一个链接的样式*/
-.skill_all ul li a.active {
+.shop_all ul li a.active {
     font-size: 16px;
     color: white;
     text-decoration: none;
@@ -207,7 +207,7 @@ hr {
 }
 
 /*视频区*/
-.skill_video {
+.shop_video {
 
     width: 1187px;
     /*1200px*/
@@ -218,7 +218,7 @@ hr {
 
 }
 
-.skill_video li {
+.shop_video li {
     list-style-type: none;
     float: left;
     margin-right: 26px;
@@ -228,7 +228,7 @@ hr {
 }
 
 /*第四个右边距为0*/
-.skill_video li.not_margin_right {
+.shop_video li.not_margin_right {
     margin-right: 0;
 }
 
@@ -240,7 +240,7 @@ hr {
 
 }
 
-.skill_video img {
+.shop_video img {
     cursor: pointer;
     margin: 0 auto;
     width: 272px;
@@ -249,12 +249,12 @@ hr {
     transition: all 0.6s;
     overflow: visible;
 }
-.skill_video img:hover {
+.shop_video img:hover {
     /*定义2d转换*/
     transform: scale(1.1);
 }
 
-.skill_video_title {
+.shop_video_title {
     font-size: 18px;
     color: black;
     font-weight: bold;

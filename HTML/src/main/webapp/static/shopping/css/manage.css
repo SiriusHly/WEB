@@ -1,0 +1,48 @@
+
+
+input[type="button"]{
+    border-radius: 5px;
+}
+
+.back_red{
+    background-color: red;
+}
+
+.back_green{
+    background-color: #00ff6b;
+}
+
+.back_blue{
+    background-color: #1ea0ff;
+}
+
+.manage_table{
+    margin-top: 2%;
+    margin-left: 20%;
+}
+
+.nav{
+    float: left;
+    margin-top: 4%;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+.nav li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* 鼠标移动到选项上修改背景颜色 */
+.nav li a:hover {
+    background-color: #555;
+    color: white;
+}
