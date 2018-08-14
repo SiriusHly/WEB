@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CSS:war">
+    <output-path>$PROJECT_DIR$/CSS/target</output-path>
+    <root id="archive" name="CSS.war">
+      <element id="artifact" artifact-name="CSS:war exploded" />
+    </root>
+  </artifact>
+</component>

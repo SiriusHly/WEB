@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CSS:war exploded">
+    <output-path>$PROJECT_DIR$/CSS/target/CSS</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CSS" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/CSS/target/CSS/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="CSS/web/Web" />
+    </root>
+  </artifact>
+</component>

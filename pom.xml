@@ -13,6 +13,7 @@
         <module>RegularExpression</module>
         <module>jQuery</module>
         <module>HTML</module>
+        <module>CSS</module>
     </modules>
     <packaging>pom</packaging>
 
