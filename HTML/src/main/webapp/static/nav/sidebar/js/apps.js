@@ -17,7 +17,7 @@ var handleSidebarMenu = function () {
     $(".sidebar .nav > .has-sub > a").click(function () {
         var e = $(this).next(".sub-menu");
         var t = ".sidebar .nav > li.has-sub > .sub-menu";
-        $(t).not(e).slideUp(250);
+        /*$(t).not(e).slideUp(250);*/
         $(e).slideToggle(250)
     });
     $(".sidebar .nav > .has-sub .sub-menu li.has-sub > a").click(function () {
