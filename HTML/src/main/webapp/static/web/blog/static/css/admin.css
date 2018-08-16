@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 body {
 
     width: 100%;
@@ -114,6 +118,7 @@ header img {
     position: relative;
     height: 870px;
 }
+/*文章编辑开始*/
 .main {
     min-width: 1300px;
     /*border: 1px solid red;*/
@@ -122,24 +127,116 @@ header img {
     top: 70px;
     width: 100%;
 
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
+/*隐藏滚动条，只有Google浏览器有效*/
+/*.article_edit::-webkit-scrollbar{
+    display: none;
+}*/
 .article_edit{
-    overflow: scroll;
-    border: 1px solid blue;
+    overflow: auto;
+    /*border: 1px solid blue;*/
     margin-left: 230px;
     margin-top: 10px;
     height: 700px;
 }
 .my_editor{
-    margin-top: 30px;
+    margin-top: 20px;
     overflow: hidden;
     margin-left: 0;
-   border: 1px solid green;
+   /*border: 1px solid green;*/
     height: auto;
+    width: 90%;
 
 }
+.article_edit .title{
+    border: none;
+    outline: none;
+    background-color: #efefef;
+    height: 30px;
+    margin-top: 35px;
+    width: 90%;
+    font-size: 15px;
+    text-indent: 1em;
+}
+
+/*start article type*/
+
+.article_type_select li{
+    float: left;
+    margin-left: 20px;
+    font-size: 13px;
+    color: black;
+
+
+}
+.article_type_select li:first-child{
+   margin-left: 90px;
+
+}
+
+.article_type_select li:nth-child(odd){
+    margin-top: 8px;
+}
+
+
+.article_type_select li select{
+    width: 120px;
+    height: 30px;
+    padding: 5px 10px 5px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    /*去掉点击后的边框*/
+    outline: none;
+
+}
+
+/*end article type*/
+
+/*编辑操作start*/
+
+.article_operation{
+    /*border: 1px solid green;*/
+    margin-top: 70px;
+    margin-bottom: 70px;
+    height: 50px;
+    width: 100%;
+
+
+}
+
+.article_operation input[type="button"]{
+    border-radius: 5px;
+    font-size: 15px;
+    margin-left: 30px;
+    padding: 5px 10px 5px;
+    height: 35px;
+    border: 1px solid #d32027;
+    margin-top: 5px;
+    background-color: white;
+    color: #d32027;
+}
+.article_operation input[type="button"]:hover{
+    color: white;
+    background-color: #d32027;
+}
+
+
+.article_operation input[type="button"]:first-child{
+    margin-left: 90px;
+}
+.article_operation input[type="button"]:last-child{
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.article_operation input[type="button"]:last-child:hover{
+    background-color:#6c757d;
+    color: white;
+}
+
+/*文章编辑end*/
+/*start aside*/
 
 .sidebar {
     float: left;
@@ -147,7 +244,7 @@ header img {
     background-color: #205b8f;
     position: absolute;
     left: 0;
-    top: 0px;
+    top: 0;
     bottom: 0;
     z-index: 10;
 
@@ -218,7 +315,7 @@ header img {
     color: #ff19d1
 }
 
-
+/*end aside*/
 /*页脚开始*/
 .foot {
     min-width: 1300px;
@@ -256,7 +353,7 @@ header img {
 /*页脚结束*/
 
 .foot-iframe {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 100%;
     position: absolute;
     top: 0;

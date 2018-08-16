@@ -3,13 +3,24 @@
 @github :github.com/SiriusHly
 @blog :blog.csdn.net/Sirius_hly
 @date :2018/8/14*/
-
-
+/*文档*/
+/*http://www.jq22.com/demo/jQuery-slimScroll-141223223505/*/
 var handleSlimScroll = function () {
     "use strict";
-    $('#my-scrollbar,#article_edit').slimScroll({
-        height: '100%'
+   $('#article_edit').slimScroll({
+
+       height:700,
+       railVisible: true,
+       railColor: '#ff0b56'
     });
+
+
+    $('#my-scrollbar').slimScroll({
+        height: '100%',
+        railVisible: true,
+        railColor: '#ff0f04'
+    });
+
 };
 
 var handleSidebarMenu = function () {
