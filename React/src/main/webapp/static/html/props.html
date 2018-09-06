@@ -1,0 +1,62 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/6
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+</head>
+<body>
+<div id ="div1"></div>
+<div id ="div2"></div>
+
+<!--state更新数据,props传递数据-->
+<script type="text/babel">
+
+    function MyProps(props) {
+        /*获取name属性*/
+        return <h3>Hello {props.username}</h3>
+    }
+
+    const  element = <MyProps username ="hly"/>
+
+    ReactDOM.render(
+        element,
+        document.getElementById("div1")
+    )
+</script>
+
+
+<script type="text/babel">
+    class MyProps2 extends React.Component{
+        render(){
+            return (
+                <h3>Hello {this.props.username}</h3>
+            );
+        }
+    }
+    /*设置props的默认值*/
+    MyProps2.defaultProps = {
+        username :'sdf'
+    };
+
+    const  element2 = <MyProps2/>
+
+    ReactDOM.render(
+      element2,
+      document.getElementById('div2')
+    );
+
+</script>
+
+</body>
+</html>

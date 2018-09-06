@@ -1,0 +1,70 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/6
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props&state</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<!--在父组件中设置 state， 并通过在子组件上使用 props 将其传递到子组件上-->
+<script type="text/babel">
+
+
+    class MyWeb extends React.Component{
+        constructor(){
+            super();
+            this.state ={
+                user:"hly",
+                password:"123"
+            }
+        }
+        render(){
+            return(
+                <div>
+                    <User user ={this.state.user}/>
+                    <Password password = {this.state.password}/>
+                </div>
+            );
+        }
+    }
+
+
+
+    class User extends React.Component{
+        render(){
+            return(
+                <h3>{this.props.user}</h3>
+            );
+        }
+    }
+
+    class Password extends React.Component{
+        render(){
+            return(
+                <h3>{this.props.password}</h3>
+            );
+        }
+    }
+
+    ReactDOM.render(
+      <MyWeb/>,
+        document.getElementById("div1")
+
+    );
+
+
+</script>
+
+</body>
+</html>

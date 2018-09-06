@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JSX</title>
+    <title>props-verify</title>
     <!--React 的核心库-->
     <script src="../plugins/react/react.development.js"></script>
     <!--提供与 DOM 相关的功能-->
@@ -19,28 +19,27 @@
 <body>
 <div id="div1"></div>
 
-<SCRIPT type="text/babel">
-    var i =1;
-    /*JSX表达式*/
-    /*1.JSX 中不能使用 if else,可用三元运算符*/
-    /*2.可在{}写JavaScript表达式*/
-    /*3.内联样式*/
-    var myStyle = {
-        color:'blue'
+<script type="text/babel">
+    var name ="hly";
+    class MyPropsType extends React.Component{
+        render(){
+            return (
+                <h3>{this.props.name}</h3>
+            );
+        }
+    }
+
+    MyPropsType.propTypes = {
+        name: PropTypes.string
     };
-    /*4.数组*/
-    var arr = [
-        /*<h6 style={myStyle}>{i==1?'hly':'123'}</h6>,*/
-        <h6 style={{color:'red'}}>{i==1?'hly':'123'}</h6>,
-    ];
+
     ReactDOM.render(
-        <div>
-            {/*注释*/}
-            {arr}
-        </div>,
+        <MyPropsType name = {name}/>,
         document.getElementById('div1')
     );
-</SCRIPT>
+
+
+</script>
 
 </body>
 </html>
