@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="React:war">
+    <output-path>$PROJECT_DIR$/React/target</output-path>
+    <root id="archive" name="React.war">
+      <element id="artifact" artifact-name="React:war exploded" />
+    </root>
+  </artifact>
+</component>

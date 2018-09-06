@@ -7,20 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="AngularJS" />
+        <module name="AngularJS2" />
         <module name="CSS" />
         <module name="HTML" />
         <module name="jQuery" />
         <module name="JS" />
+        <module name="React" />
         <module name="RegularExpression" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AngularJS" target="1.7" />
+      <module name="AngularJS2" target="1.7" />
       <module name="CSS" target="1.7" />
       <module name="HTML" target="1.7" />
       <module name="Html5" target="1.7" />
       <module name="jQuery" target="1.7" />
       <module name="JS" target="1.7" />
+      <module name="React" target="1.7" />
       <module name="RegularExpression" target="1.7" />
       <module name="WEB" target="1.7" />
     </bytecodeTargetLevel>

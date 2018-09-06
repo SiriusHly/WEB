@@ -1,0 +1,59 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/5
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Render</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+</head>
+<body>
+<!--函数更新界面-->
+<div id="id1"></div>
+<script type="text/babel">
+    function tick() {
+        const element = <div>
+            <h3>Hello React</h3>
+            <h3>当前时间为:{new Date().toLocaleTimeString()}</h3>
+        </div>
+        ReactDOM.render(
+            element,
+            document.getElementById("id1")
+        );
+    }
+    setInterval(tick,1000);
+</script>
+
+<!--React.Component 的 ES6 类-->
+<div id="div2"></div>
+<script type="text/babel">
+    class MyClock extends React.Component{
+        render(){
+            return(
+                <div>
+                    <h3>hello React</h3>
+                    <h3>当前时间为{this.props.myData.toLocaleTimeString()}</h3>
+                </div>
+            );
+        }
+    }
+
+    function tick2() {
+        ReactDOM.render(
+            <MyClock myData = {new Date()}/>,
+            document.getElementById('div2')
+        );
+    }
+    setInterval(tick2,1000);
+</script>
+
+</body>
+</html>

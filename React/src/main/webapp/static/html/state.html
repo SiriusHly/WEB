@@ -1,0 +1,76 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/6
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>state</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<script type="text/babel">
+
+    /*待深入研究*/
+    /*自顶向下或单向数据流,任何状态始终由某些特定组件所有*/
+    function MyDate(props) {
+        return <h3>now is {props.date.toLocaleTimeString()}</h3>;
+    }
+    class MyClock extends React.Component{
+        constructor(props){
+            super(props);
+            /*1.调用组件，显示当前时间*/
+            this.state = {date:new Date()};
+        }
+
+        /*3.调用声明周期钩子*/
+        /*定义ID,可进行卸载*/
+        componentDidMount(){
+            this.timeID = setInterval(
+                ()=>this.tick(),
+                1000
+            );
+        }
+
+        /*5.移除将会被调用*/
+        componentWillUnmount(){
+            clearInterval(this.timeID);
+        }
+
+        /*4.setState更新UI,React知道状态改变，再次调用render()*/
+        tick(){
+            this.setState({
+                date:new Date()
+            });
+        }
+
+        /*2.调用render方法，渲染输出*/
+        render(){
+            return (
+                <div>
+                    <h3>How time now?</h3>
+                    <MyDate date = {this.state.date}/>
+                </div>
+            );
+        }
+    }
+
+
+    ReactDOM.render(
+        <MyClock/>,
+        document.getElementById('div1')
+    )
+
+
+</script>
+
+</body>
+</html>

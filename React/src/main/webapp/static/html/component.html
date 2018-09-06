@@ -1,0 +1,69 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/6
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="myWeb"></div>
+<script type="text/babel">
+    /*1.函数定义组件(大写字母开头)*/
+    function MyComponent(props) {
+        /*传递参数*/
+        return <h3>Hello {props.username}</h3>;
+    };
+    /*2.ES6定义组件*/
+    /*class MyComponent extends React.Component{
+        render(){
+            return <h3>Hello Word</h3>;
+        }
+    }*/
+
+    /*用户自定义组件*/
+
+    const element = < MyComponent username="hly"/>
+    /*ReactDOM.render(template,targetDOM)*/
+    /*模板转化为html语言，并插入先关节点*/
+    ReactDOM.render(
+        element,
+        document.getElementById('div1')
+    );
+
+    /*3.复合组件*/
+    function UserId(props) {
+        return <h3>userId:{props.userId}</h3>;
+    }
+
+    function UserPassword(props) {
+        return <h3>userPassword:{props.userPassword}</h3>;
+    }
+
+    function Web() {
+        return (
+            <div>
+                <UserId userId="001"/>
+                <UserPassword userPassword="123"/>
+            </div>
+        );
+    }
+
+    ReactDOM.render(
+        <Web />,
+        document.getElementById('myWeb')
+    );
+</script>
+
+</body>
+</html>

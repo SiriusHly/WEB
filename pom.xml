@@ -14,6 +14,8 @@
         <module>jQuery</module>
         <module>HTML</module>
         <module>CSS</module>
+        <module>AngularJS2</module>
+        <module>React</module>
     </modules>
     <packaging>pom</packaging>
 
