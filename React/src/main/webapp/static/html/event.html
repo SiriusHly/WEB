@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>props-verify</title>
+    <title>event</title>
     <!--React 的核心库-->
     <script src="../plugins/react/react.development.js"></script>
     <!--提供与 DOM 相关的功能-->
@@ -18,27 +18,27 @@
     <script src="../plugins/react/prop-types.js"></script>
 </head>
 <body>
-<div id="div1"></div>
 
+<div id="div1"></div>
 <script type="text/babel">
-    var name ="hly";
-    class MyPropsType extends React.Component{
-        render(){
-            return (
-                <h3>{this.props.name}</h3>
-            );
+    /*React事件*/
+    function MyAction() {
+        function handleClick(e) {
+            e.preventDefault();
+            console.log("点击");
         }
+
+        return (
+            <a href="javascript;" onClick={handleClick}>
+                点击;
+            </a>
+        );
     }
 
-    MyPropsType.propTypes = {
-        name: PropTypes.string
-    };
-
     ReactDOM.render(
-        <MyPropsType name = {name}/>,
+        < MyAction/>,
         document.getElementById('div1')
     );
-
 
 </script>
 

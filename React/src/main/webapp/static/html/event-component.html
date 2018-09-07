@@ -1,13 +1,13 @@
 <!--@author :hly
 @github :github.com/SiriusHly
 @blog :blog.csdn.net/Sirius_hly
-@date :2018/9/6
+@date :2018/9/7
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>props-verify</title>
+    <title>event-component</title>
     <!--React 的核心库-->
     <script src="../plugins/react/react.development.js"></script>
     <!--提供与 DOM 相关的功能-->
@@ -16,31 +16,44 @@
     <script src="../plugins/react/babel.min.js"></script>
     <!--prop-types验证-->
     <script src="../plugins/react/prop-types.js"></script>
+
 </head>
 <body>
 <div id="div1"></div>
-
 <script type="text/babel">
-    var name ="hly";
-    class MyPropsType extends React.Component{
+
+    class Toggle extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {isToggleOn:true};
+            /*this在回调函数中使用*/
+            this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick(){
+            this.setState(preState=>({
+                isToggleOn:!preState.isToggleOn
+            }));
+        }
         render(){
-            return (
-                <h3>{this.props.name}</h3>
+            return(
+              <button onClick={this.handleClick}>
+                  {this.state.isToggleOn?'ON':'OFF'}
+              </button>
             );
         }
     }
 
-    MyPropsType.propTypes = {
-        name: PropTypes.string
-    };
-
     ReactDOM.render(
-        <MyPropsType name = {name}/>,
+        <Toggle/>,
         document.getElementById('div1')
     );
 
 
+
+
 </script>
+
+
 
 </body>
 </html>

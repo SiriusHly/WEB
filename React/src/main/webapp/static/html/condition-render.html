@@ -1,0 +1,111 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/7
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>condition-render</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+    <!--prop-types验证-->
+    <script src="../plugins/react/prop-types.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<script type="text/babel">
+    class LoginControl extends React.Component {
+        constructor(props) {
+            super(props);
+            this.handleLoginClick = this.handleLoginClick.bind(this);
+            this.handleLogoutClick = this.handleLogoutClick.bind(this);
+            this.state = {isLoggedIn: false};
+        }
+
+        /*设置改变属性的方法*/
+        handleLoginClick() {
+            this.setState({isLoggedIn: true});
+        }
+
+        handleLogoutClick() {
+            this.setState({isLoggedIn: false});
+        }
+
+        /*渲染button*/
+        render() {
+            /*const,let在{}内有效*/
+            /*const必须初始化，不可修改*/
+            /*var可不初始化,undefined,可以修改*/
+            /*let 函数内部使用，对函数外不影响*/
+            const isLoggedIn = this.state.isLoggedIn;
+            let button =null;
+            /*true改为false，false改为true*/
+            if (isLoggedIn) {
+                /*结尾分号*/
+                button = <LoginButton onClick = {this.handleLogoutClick}/>;
+            }
+            else {
+                button = <LogoutButton onClick = {this.handleLoginClick}/>;
+            }
+
+            return (
+                <div>
+                    <Greeting isLoggedIn={isLoggedIn}/>
+                    {button}
+                </div>
+            );
+        }
+    }
+
+    /*定义两个方法，返回特定模板*/
+    function UserGreeting(props) {
+        return <h3>欢迎回来</h3>;
+    }
+
+    function GuestGreeting(props) {
+        return <h3>请先登录</h3>;
+    }
+
+    function Greeting(props) {
+        /*类似于java中的常量*/
+        const isLoggedIn = props.isLoggedIn;
+        if (isLoggedIn) {
+            return <UserGreeting/>;
+        }
+        return <GuestGreeting/>;
+    }
+
+    /*定义声明按钮的方法*/
+    function LoginButton(props) {
+        return (
+            <button onClick={props.onclick}>
+                登录
+            </button>
+        );
+    }
+
+    function LogoutButton(props) {
+        return (
+            <button onClick={props.onclick}>
+                退出
+            </button>
+        );
+    }
+
+    ReactDOM.render(
+        < LoginControl/>,
+        document.getElementById('div1')
+    );
+
+
+</script>
+
+
+</body>
+</html>
