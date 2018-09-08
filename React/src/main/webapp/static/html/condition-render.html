@@ -44,14 +44,15 @@
             /*var可不初始化,undefined,可以修改*/
             /*let 函数内部使用，对函数外不影响*/
             const isLoggedIn = this.state.isLoggedIn;
-            let button =null;
+            let button ;
             /*true改为false，false改为true*/
             if (isLoggedIn) {
+                /*true表示已经登录，事件为退出*/
                 /*结尾分号*/
-                button = <LoginButton onClick = {this.handleLogoutClick}/>;
+                button = <LogoutButton onClick = {this.handleLogoutClick}/>;
             }
             else {
-                button = <LogoutButton onClick = {this.handleLoginClick}/>;
+                button = <LoginButton onClick = {this.handleLoginClick}/>;
             }
 
             return (
@@ -82,9 +83,10 @@
     }
 
     /*定义声明按钮的方法*/
+    /*onClick，C为大写*/
     function LoginButton(props) {
         return (
-            <button onClick={props.onclick}>
+            <button onClick={props.onClick}>
                 登录
             </button>
         );
@@ -92,14 +94,14 @@
 
     function LogoutButton(props) {
         return (
-            <button onClick={props.onclick}>
+            <button onClick={props.onClick}>
                 退出
             </button>
         );
     }
 
     ReactDOM.render(
-        < LoginControl/>,
+        <LoginControl/>,
         document.getElementById('div1')
     );
 
