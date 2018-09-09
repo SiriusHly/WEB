@@ -1,0 +1,62 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/9
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keys</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+    <!--prop-types验证-->
+    <script src="../plugins/react/prop-types.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<script type="text/babel">
+
+    function ListItem(props) {
+        return <li>{props.value}</li>
+    }
+
+    function NumberList(props) {
+        /*2.渲染的参数传递进来*/
+        const numbers = props.numbers;
+        /*3.给ListItems赋值，可不需要声明，直接在ul里边返回*/
+        /*箭头函数相当于匿名函数*/
+        /*ES5*/
+        /*var mapResult = num1.map(function(item,index,array){
+         return item*2;
+        });*/
+        /*ES6*/
+        /*
+        var mapResults = num1.map((item,index,array) => item*2);
+        */
+        const listItems = numbers.map((number) =>
+            /*抽象啊*/
+            <ListItem key={number.toString()} value={number}/>
+        );
+
+        return (
+            <ul>
+                {listItems}
+            </ul>
+        );
+    }
+
+    const numbers = [1, 2, 3, 4, 5];
+    ReactDOM.render(
+        /*1.传递参数*/
+        <NumberList numbers={numbers}/>,
+        document.all('div1')
+    );
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/9
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+    <!--prop-types验证-->
+    <script src="../plugins/react/prop-types.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+
+<script type="text/babel">
+    function NumberList(props) {
+        const numbers = props.numbers;
+        /*赋值listItem*/
+        const listItem = numbers.map((number)=>
+
+        <li key={number.toString()}>
+            {number}
+        </li>
+
+        );
+
+
+        return(
+            <ul>{listItem}</ul>
+        );
+    }
+
+    const numbers = [1,2,3,4,5];
+    ReactDOM.render(
+        <NumberList numbers = {numbers}/>,
+        document.getElementById('div1')
+    );
+
+
+
+</script>
+
+</body>
+</html>
