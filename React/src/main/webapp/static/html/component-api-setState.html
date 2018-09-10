@@ -1,0 +1,55 @@
+<!--@author :hly
+@github :github.com/SiriusHly
+@blog :blog.csdn.net/Sirius_hly
+@date :2018/9/9
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setState</title>
+    <!--React 的核心库-->
+    <script src="../plugins/react/react.development.js"></script>
+    <!--提供与 DOM 相关的功能-->
+    <script src="../plugins/react/react-dom.development.js"></script>
+    <!--Babel 可以将 ES6 代码转为 ES5 代码-->
+    <script src="../plugins/react/babel.min.js"></script>
+    <!--prop-types验证-->
+    <script src="../plugins/react/prop-types.js"></script>
+</head>
+<body>
+
+<div id="div1"></div>
+
+<script type="text/babel">
+
+    class Counter extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {clickCount:0};
+            /*2.绑定函数*/
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        /*1.定义函数*/
+        handleClick(){
+            this.setState(function (state) {
+               return {clickCount:state.clickCount+1};
+            });
+        }
+
+        render(){
+            /*3.给函数添加点击事件，点击结束后修改状态state*/
+            return (<h3 onClick = {this.handleClick}> 点击此时为:{this.state.clickCount}</h3>)
+        }
+    }
+
+
+    ReactDOM.render(
+        <Counter/>,
+        document.getElementById('div1')
+    )
+
+</script>
+</body>
+</html>
