@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/CSS/CSS.iml" filepath="$PROJECT_DIR$/CSS/CSS.iml" />
       <module fileurl="file://$PROJECT_DIR$/HTML/HTML.iml" filepath="$PROJECT_DIR$/HTML/HTML.iml" />
       <module fileurl="file://$PROJECT_DIR$/JS/JS.iml" filepath="$PROJECT_DIR$/JS/JS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NodeJS/NodeJS.iml" filepath="$PROJECT_DIR$/NodeJS/NodeJS.iml" />
       <module fileurl="file://$PROJECT_DIR$/React/React.iml" filepath="$PROJECT_DIR$/React/React.iml" />
       <module fileurl="file://$PROJECT_DIR$/RegularExpression/RegularExpression.iml" filepath="$PROJECT_DIR$/RegularExpression/RegularExpression.iml" />
       <module fileurl="file://$PROJECT_DIR$/WEB.iml" filepath="$PROJECT_DIR$/WEB.iml" />

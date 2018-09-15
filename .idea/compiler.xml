@@ -24,6 +24,7 @@
       <module name="Html5" target="1.7" />
       <module name="jQuery" target="1.7" />
       <module name="JS" target="1.7" />
+      <module name="NodeJS" target="1.7" />
       <module name="React" target="1.7" />
       <module name="RegularExpression" target="1.7" />
       <module name="WEB" target="1.7" />

@@ -16,6 +16,7 @@
         <module>CSS</module>
         <module>AngularJS2</module>
         <module>React</module>
+        <module>NodeJS</module>
     </modules>
     <packaging>pom</packaging>
 
